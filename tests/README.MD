@@ -5,4 +5,3 @@ Sprint_5 Gorokhov Anton
 /html/body/div/div/main/div/form/fieldset[3]/div/div/input # Регистрация пароля
 /html/body/div/div/main/div/form/button # Кнопка "Зарегестрироваться"
 /html/body/div/div/main/div/form/fieldset[3]/div/p # Алерт "некорректный пароль"
-

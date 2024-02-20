@@ -17,7 +17,7 @@ sleep(3)
 
 # Клик на кнопку "выход" в личном кабинете
 driver.find_element(By.XPATH, "/html/body/div/div/main/div/nav/ul/li[3]/button").click()
-sleep(3)
+sleep(2)
 
 # проверка редиректа на страницу авторизации после выхода из аккаунта
 assert driver.current_url == "https://stellarburgers.nomoreparties.site/login"
