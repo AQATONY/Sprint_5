@@ -1,19 +1,17 @@
 from selenium.webdriver.common.by import By
 from selenium import webdriver
-from time import sleep
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions
+from locators import MainLocators
 
 # Открытие сайта конструктора
 driver = webdriver.Chrome()
 driver.get("https://stellarburgers.nomoreparties.site")
 
-# Проверка редиректа "соусы"
+class Testclick:
+    # Проверка клика "соусы"
+    def test_click_sauce(self):
+        sauces = driver.find_element(By.XPATH, MainLocators.sauces_tab)
+        sauces.click()
+        assert "current" in sauces.get_attribute('class')
 
-driver.find_element(By.XPATH, "/html/body/div/div/main/section[1]/div[1]/div[2]").click()
-sleep(2)
 
-# Поиска таба "Соусы"
-WebDriverWait(driver, 5).until(
-    expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/div/div/main/section[1]/div[1]/div[2]")))
-driver.quit()
+        driver.quit()

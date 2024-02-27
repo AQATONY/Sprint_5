@@ -1,19 +1,17 @@
 from selenium.webdriver.common.by import By
 from selenium import webdriver
-from time import sleep
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions
+from locators import MainLocators
 
 # Открытие сайта конструктора
 driver = webdriver.Chrome()
 driver.get("https://stellarburgers.nomoreparties.site")
 
-# Проверка редиректа на "начинки"
-driver.find_element(By.XPATH, "/html/body/div/div/main/section[1]/div[1]/div[3]").click()
-sleep(2)
 
-# Поиска таба "начинки"
-WebDriverWait(driver, 5).until(
-    expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/div/div/main/section[1]/div[1]/div[3]")))
+class TestClick:
+    # Проверка клика на "начинки"
+    def test_click_tab_fillings(self):
+        fillings = driver.find_element(By.XPATH, MainLocators.fillings_tab)
+        fillings.click()
+        assert "current" in fillings.get_attribute('class')
 
-driver.quit()
+        driver.quit()
