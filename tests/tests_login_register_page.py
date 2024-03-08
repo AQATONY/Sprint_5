@@ -12,9 +12,6 @@ class TestAccount:
         driver.find_element(By.XPATH, MainLocators.button_blue_login).click()
         wait = WebDriverWait(driver, 10)
         wait.until(lambda driver: driver.current_url != "https://stellarburgers.nomoreparties.site/register")
-
-    # проверка редиректа на /login после ВХОДА
-    def test_redirect_loginpage(self):
         assert driver.current_url == "https://stellarburgers.nomoreparties.site/login"
 
     # ввод логина и пароля при входе
@@ -26,9 +23,6 @@ class TestAccount:
         driver.find_element(By.XPATH, MainLocators.button_log_loginpage).click()
         wait = WebDriverWait(driver, 10)
         wait.until(lambda driver: driver.current_url != "https://stellarburgers.nomoreparties.site/login")
-
-    # проверка редиректа на главную после ВХОДА
-    def test_redirect_mainpage(self):
         assert driver.current_url == "https://stellarburgers.nomoreparties.site/"
 
         driver.quit()

@@ -16,9 +16,6 @@ class TestAccout:
         driver.find_element(By.XPATH, MainLocators.button_log_loginpage).click()
         wait = WebDriverWait(driver, 10)
         wait.until(lambda driver: driver.current_url != "https://stellarburgers.nomoreparties.site/login")
-
-# проверка редиректа на главную после ВХОДА
-    def test_redirect_mainpage(self):
         assert driver.current_url == "https://stellarburgers.nomoreparties.site/"
 
         driver.quit()
